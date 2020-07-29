@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "db5b4353-d1b7-4d7f-8c46-dddd41ba50d2",
+		"name": "Formula1.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign In Button",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7c9b1e1-c93d-4dcc-835a-5a0738bcc34f",
+						"exec": [
+							"pm.test(\"The status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Page contains password field\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Password\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://account.formula1.com/",
+					"protocol": "https",
+					"host": [
+						"account",
+						"formula1",
+						"com"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "Sign in"
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe Button",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "236d55af-a75a-4aed-a8c8-8cad8162b0ae",
+						"exec": [
+							"pm.test(\"The status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The response time is less than 100\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The page contains plan selection for subscription\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"choose-your-plan\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.formula1.com/en/subscribe-to-f1-tv.html",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formula1",
+						"com"
+					],
+					"path": [
+						"en",
+						"subscribe-to-f1-tv.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drivers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e927556-e582-4664-82a4-387cf626dec2",
+						"exec": [
+							"pm.test(\"The status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.formula1.com/en/results.html/2020/drivers.html",
+					"protocol": "https",
+					"host": [
+						"www",
+						"formula1",
+						"com"
+					],
+					"path": [
+						"en",
+						"results.html",
+						"2020",
+						"drivers.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Choose yearly plan ( Refresh Session ) POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://services.prd3.contentdirect.tv//Subscriber/RefreshSession",
+					"protocol": "https",
+					"host": [
+						"services",
+						"prd3",
+						"contentdirect",
+						"tv"
+					],
+					"path": [
+						"",
+						"Subscriber",
+						"RefreshSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe - Yearly Plan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://services.prd3.contentdirect.tv//Subscriber/RetrieveShoppingCart",
+					"protocol": "https",
+					"host": [
+						"services",
+						"prd3",
+						"contentdirect",
+						"tv"
+					],
+					"path": [
+						"",
+						"Subscriber",
+						"RetrieveShoppingCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Options",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://engage.talkative.uk/api/v1/controls/online",
+					"protocol": "https",
+					"host": [
+						"engage",
+						"talkative",
+						"uk"
+					],
+					"path": [
+						"api",
+						"v1",
+						"controls",
+						"online"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
