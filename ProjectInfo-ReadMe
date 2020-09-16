@@ -1,0 +1,10 @@
+# Project
+
+Manual & Automated tests for:
+--- www.formula1.com ---
+Will include:
+A mindmap for the application and develop test based on it
+Including API tests w/ Postman
+Cypress Tests
+UI Tests
+E2E Tests
