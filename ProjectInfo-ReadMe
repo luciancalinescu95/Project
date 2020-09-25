@@ -3,7 +3,7 @@
 Manual & Automated tests for:
 --- www.formula1.com ---
 Will include:
-A mindmap for the application and develop test based on it
+A mindmap for the application and develop tests based on it
 API tests w/ Postman
 Cypress automated tests
 Exploratory testing
